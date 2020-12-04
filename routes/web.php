@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\SSOController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,8 +14,9 @@ use App\Http\Controllers\SSOController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('examples.login');
 });
 
-Route::get('/auth/pnj', [SSOController::class, 'redirectToSSOPNJ']);
-Route::get('/cb', [SSOController::class, 'callback']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

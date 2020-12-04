@@ -14,12 +14,6 @@ return [
     |
     */
 
-    'pnj' => [
-        'client_id' => env('CLIENT_ID'),
-        'client_secret' => env('CLIENT_SECRET'),
-        'redirect' => env('REDIRECT_URI')
-    ],
-
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),
